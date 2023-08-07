@@ -1,0 +1,12 @@
+# aws-load-balancer-controller
+# * https://github.com/kubernetes-sigs/aws-load-balancer-controller
+global:
+  ingress:
+    enabled: true
+    alpha_hostname: alpha.example.com
+    ingressClassName: alb
+    annotations:
+      # internet-facing or internal
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      # ip for ClusterIP, instance for NodePort
+      alb.ingress.kubernetes.io/target-type: ip
